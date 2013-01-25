@@ -138,3 +138,16 @@ var vacation = {
     }
 };
 
+vacation.narration("My Family would like to go on vacation to " +vacationDest);
+vacation.narration("We had to compare prices between " + vacation.airline[0]+", " + vacation.airline[1]+" and " + vacation.airline[2]+" to determine the cheapest air fare!")
+vacation.checkAirlines(cheapestAirline);
+vacation.narration("We purchased the following tickets")
+vacation.getData(json);
+vacation.narration("We didn't get the same boarding group so here are the boarding group for the travelers")
+vacation.boardingGroup();
+vacation.narration("The totals of each ticket we purchased is")
+vacation.ticketPrice();
+vacation.narration("We are all excited to get this vacation to " +vacationDest + " we only have a couple layovers");
+var layover = vacation.startTravel;
+vacation.startTravel(layover);
+
