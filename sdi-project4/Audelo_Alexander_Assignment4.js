@@ -75,4 +75,69 @@ var urlCheck = function (string) {
 	}
 }
 
+// Problem 5: Does a string follow an aaa@bbb.ccc pattern like an email address?
+
+var emailCheck = function (localEmail) {
+	var email = localEmail,
+		checkAt = 0,
+		checkDot = 0;
+
+	checkAt = email.indexOf("@");
+	checkDot = email.indexOf(".");
+
+	if (checkAt != -1 && checkDot != -1) {
+		if (checkAt < checkDot) {
+			if (checkDot - checkAt != 1) {
+				return (email + " is a valid email.");
+			}
+			else {
+				return (email + " is not a valid email.");
+			}
+		}
+		else {
+			return (email + " is not a valid email.");
+		}
+	}
+	else {
+		return (email + " is not a valid email.");
+	}	
+}
+
+// Problem 6: Does a string follow a 123-456-7890 pattern like a phone number?
+
+var numberCheck = function (phoneNumber) {
+	var number = phoneNumber,
+		regExpPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/,
+		check;
+
+	check = regExpPattern.test(number);
+
+	if (check) {
+		return (number + " is a valid phone number.");
+	}
+	else {
+		return (number + " is not a valid phone number.");
+	}
+}
+
+var numArray = [5, 12, 15, 21, 38, 45, 43, 65, 123, 32, 12, 23]
+
+console.log(specificDec(2.1));
+console.log(specificDec(3.2123));
+console.log(specificDec(100));
+
+console.log(smallValue(numArray, 22));
+
+console.log(charReplace("A,B,C,D,E", ",", "/"));
+
+console.log(urlCheck("http://www.apple.com/"));
+console.log(urlCheck("apple.com"));
+
+console.log(emailCheck("chcio350z@fullsail.edu"));
+console.log(emailCheck("chcio350z@fullsailedu"));
+
+console.log(numberCheck("864-921-3099"));
+console.log(numberCheck("(864)-921-3099"));
+console.log(numberCheck("864-921-026"));
+
 
