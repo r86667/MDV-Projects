@@ -75,31 +75,4 @@ var urlCheck = function (string) {
 	}
 }
 
-// Problem 5: Does a string follow an aaa@bbb.ccc pattern like an email address?
-
-var emailCheck = function (localEmail) {
-	var email = localEmail,
-		checkAt = 0,
-		checkDot = 0;
-
-	checkAt = email.indexOf("@");
-	checkDot = email.indexOf(".");
-
-	if (checkAt != -1 && checkDot != -1) {
-		if (checkAt < checkDot) {
-			if (checkDot - checkAt != 1) {
-				return (email + " is a valid email.");
-			}
-			else {
-				return (email + " is not a valid email.");
-			}
-		}
-		else {
-			return (email + " is not a valid email.");
-		}
-	}
-	else {
-		return (email + " is not a valid email.");
-	}	
-}
 
